@@ -40,11 +40,11 @@ def setup_web_app():
     if env.webapp_repository:
         _verify_sudo()
         sudo('mkdir -p %s' % env.webapp_code_root)
-        sudo('rm -rf ' + env.webapp_code_root)
-        sudo('git clone -b %s %s %s' % (env.webapp_branch, env.webapp_repository, env.webapp_code_root))
-        #sudo('wget -qO- https://github.com/CoinLQ/Z_PUB/archive/master.zip | bsdtar -xvf- -C /opt/websites/z_pub')
-        #sudo('rm -rf /opt/websites/z_pub/current')
-        #sudo('mv /opt/websites/z_pub/Z_PUB-master /opt/websites/z_pub/current')
+        #sudo('rm -rf ' + env.webapp_code_root)
+        #sudo('git clone -b %s %s %s' % (env.webapp_branch, env.webapp_repository, env.webapp_code_root))
+        sudo('wget -qO- https://github.com/CoinLQ/Z_PUB/archive/master.zip | bsdtar -xvf- -C /opt/websites/z_pub')
+        sudo('rm -rf /opt/websites/z_pub/current')
+        sudo('mv /opt/websites/z_pub/Z_PUB-master /opt/websites/z_pub/current')
         sudo('nginx -s reload')
 
 def _install_requirements():
