@@ -16,6 +16,8 @@ or
 `fab config:./config.ini deploy`
 ##### 一键部署项目到服务器上
 `fab config:./config.ini one_step`
+##### 部署webapp应用
+`fab config:./config.ini setup_web_app`
 
 ### 配置项说明
 ##### 服务器ssh连接
